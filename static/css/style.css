@@ -1,0 +1,272 @@
+*::after,
+*::before,
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+html{
+    font-family: "Roboto", sans-serif;;
+    scroll-behavior: smooth;
+}
+a{
+    text-decoration: none;
+    color: white;
+}
+img{
+    height: auto;
+}
+li{list-style: none;}
+button{
+    background: none;
+    border: none;
+    outline: none;
+    color: white;
+    cursor: pointer;
+}
+.toggle{
+    background: rgb(208, 153, 46);
+    height: 70px;
+    font-size: 22px;
+    border-radius: 6px;
+    width: 240px;
+}
+.toggle:hover{
+    background-color: rgb(166, 122, 36);
+}
+body{
+    background: rgb(0, 0, 0);
+    color: white;
+}
+
+/* header */
+.nav-toggle-btn{
+    display: none;
+}
+.header{
+    position: fixed;
+    background-color: black;
+    z-index: 100;
+    width: 100%;
+    top: 0;
+    left: 0;
+    height: 100%;
+}
+.header > .container{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding-block: 40px;
+}
+.item-list{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    column-gap: 30px;
+}
+.item-link{
+    font-size: 22px;
+    font-weight: 400;
+}
+.navbar{
+    visibility: hidden;
+}
+.navbar.active{
+    visibility: visible;
+}
+
+.logo img{
+    width: 100%;
+}
+/* SECTION ONE */
+
+section .container{
+    display: flex;
+    align-items: center;
+    gap: 120px;
+}
+
+.logoImage img{
+    height: 80vh;
+}
+
+.title{
+    font-size: 5rem;
+    padding-bottom: 40px;
+    letter-spacing: 4px;
+}
+
+.address{
+    font-size: 2rem;
+    font-weight: 50px;
+    padding-bottom: 40px;
+    
+}
+
+.discrption{
+    font-size: 26px;
+    padding-bottom: 40px;
+    line-height: 2;
+}
+
+/* SECTION TWO */
+
+.services{
+    text-align: center;
+    display: grid;
+    place-items: center;
+}
+.p{
+    font-size: 50px;
+    line-height: 3;
+}
+.p-large{
+    font-size: 26px;
+    padding-bottom: 40px;
+}
+
+.wrapper{
+    display: flex;
+    width:70%;
+    justify-content: space-evenly;
+    
+}
+.card{
+    width: 380px;
+    height: 300px;
+    padding: 2rem 1rem;
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    transition: 0.2s ease-in-out;
+}
+.card:hover{
+    transform: translateY(20px);
+}
+.card:hover::before{
+    background: red;
+}
+.card{
+    display: grid;
+    place-items: center;
+}
+.card img{
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+.card .info{
+    position: absolute;
+    top: 50%;
+    display: grid;
+    place-items: center;
+}
+.card .info .address{
+    font-size: 26px;
+}
+
+
+@media (max-width: 1024px){
+    .container{padding-inline: 20px;}
+    /* .navbar ,
+    .header .btn{
+        display: block;
+    } */
+
+    .navbar{
+        width: 100%;
+        background: red;
+        /* height: 100vh; */
+        position: relative;
+        display: grid;
+        place-items: center;
+        z-index: 1000;
+    }
+    .navbar-top{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .item-list{
+        display: grid;
+        row-gap: 30px;
+        text-align: center;
+    }
+    .logo img{
+        width: 210px;
+    }
+    .header{
+        position: fixed;
+        /* background: rgb(116, 103, 103); */
+        top: 0;
+        left: 0;
+        padding-block: 25px;
+        width: 100%;
+    }
+    
+    .header > .container{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .nav-toggle-btn{
+        font-size: 3rem;
+    }
+    .nav-toggle-btn{
+        display: block;
+    }
+
+    section .container{
+        padding-block: 140px;
+    }
+    
+}
+
+@media (max-width:700px) {
+    
+    .logoImage img{
+        height: 50vh;
+        width: 100%;
+    }   
+    .wrapper,
+    section .container{
+        display: grid;
+    }
+    .title p{
+        font-size: 3rem;
+    }
+    .address{
+        font-size: 1.5rem;
+        letter-spacing: 1.4px;
+    }
+    
+    .discrption{
+        font-size: 22px;
+    }
+    section .container .text{
+        position: relative;
+        bottom: 43%;
+        z-index: 30;
+        padding-left: 30px;
+        width: 600px;
+    }
+    .services{
+        width: 600px;
+        padding-left: 18px;
+    }
+    
+    .services .texts .p{
+        line-height: 1.5;
+        padding-bottom: 40px;
+    }
+    .p-large{
+        font-size: 22px;
+        line-height: 2;
+    }
+    
+    .card{
+        width: 600px;
+        height: 500px;
+    }
+
+}
